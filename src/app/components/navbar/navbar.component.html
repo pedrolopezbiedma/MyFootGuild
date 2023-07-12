@@ -1,0 +1,24 @@
+<p>
+    <mat-toolbar color="primary" class="navbar">
+      <div class="title" (click)="myAlert('Include navigation here')">
+        <span>My FootGuild ( Default navigation to Players )</span>
+        <mat-icon class="ball-icon" fontIcon="sports_soccer"></mat-icon>
+      </div>
+      
+      <div class="navigation">
+        <span (click)="myAlert('Include navigation here')">Players</span>
+        <span (click)="myAlert('Include navigation here')">Matches</span>
+      </div>
+
+      <span class="spacer"></span>
+
+      <div class="authorization">
+        <button mat-raised-button color="accent">
+          <mat-icon>login</mat-icon>
+          Login
+        </button>
+      </div>
+
+    </mat-toolbar>
+
+  </p>
