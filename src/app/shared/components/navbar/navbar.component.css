@@ -1,20 +1,26 @@
 .navbar {
     justify-content: space-evenly;
 }
+
 .title {
     padding-left: 10px;
-    padding-right: 30px;
     cursor: pointer;
 }
+
 .ball-icon {
     padding-left: 5px;
     vertical-align: -5px;
 }
 
-.navigation span { 
-    padding-left: 40px;
-    cursor: pointer;
+.navigation a { 
+    border: none;
+    margin-left: 20px;
 }
+
+.active-link {
+    background: rgba(0,0,0,.2);
+} 
+
 .spacer {
     flex: 1 1 auto;
 }
@@ -22,4 +28,3 @@
 .login-icon {
     vertical-align: -5px;
 }
-
