@@ -1,7 +1,8 @@
 import { Component, OnInit } from "@angular/core";
 import { PlayersService } from "./services/players.service";
-import { BehaviorSubject, map, startWith, tap } from "rxjs";
+import { BehaviorSubject, tap } from "rxjs";
 import { Player } from "./models/player.model";
+import { ActivatedRoute, Router } from "@angular/router";
 
 @Component({
   selector: "app-players",
@@ -14,21 +15,24 @@ export class PlayersComponent implements OnInit {
 
   public players$ = this.playersService.players$.asObservable().pipe(
     tap((players) => {
+      console.log("Players are -->", players);
       if (players.length > 0) {
         this.isLoadingSubject.next(false);
       }
     })
   );
 
-  constructor(private playersService: PlayersService) {}
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute,
+    private playersService: PlayersService
+  ) {}
 
   ngOnInit(): void {
     this.playersService.getPlayers();
   }
 
   addNewPlayer(): void {
-    this.playersService.addPlayer(
-      new Player(2, "Pedro Javier", "Tocayo", 10, 30, 99, 99)
-    );
+    this.router.navigate(["new"], { relativeTo: this.route });
   }
 }
