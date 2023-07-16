@@ -1,1 +1,14 @@
-<p>players works!</p>
+<h2>Players</h2>
+<p> Loading --> {{ isLoading$ | async }}</p>
+<h3>Players</h3>
+<ul>
+    <li *ngFor="let player of players$ | async">
+        {{ player.firstName }}
+        {{ player.lastName }}
+        {{ player.numMatches }}
+        {{ player.points }}
+        {{ player.goals }}
+        {{ player.assists}}
+    </li>
+</ul>
+<button (click)="addNewPlayer()">New Player</button>
