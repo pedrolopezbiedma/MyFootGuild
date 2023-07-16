@@ -14,11 +14,16 @@ export class PlayersService {
     this.players$.next(this.playersStore);
   }
 
-  addPlayer(newPlayer: { firstName: string; lastName: string }): void {
+  addPlayer(newPlayer: {
+    avatarUrl: string;
+    firstName: string;
+    lastName: string;
+  }): void {
     this.playersStore = [
       ...this.playersStore,
       new Player(
-        this.playersStore.length + 1,
+        this.playersStore.length,
+        newPlayer.avatarUrl,
         newPlayer.firstName,
         newPlayer.lastName,
         []
@@ -29,9 +34,9 @@ export class PlayersService {
 
   private loadPlayers(): void {
     this.playersStore = [
-      new Player(0, "Pedro", "Lopez Biedma", []),
-      new Player(1, "Juanma", "Lopez Torralba", []),
-      new Player(2, "Jorge", "Arroyo", []),
+      new Player(0, "", "Pedro", "Lopez Biedma", []),
+      new Player(1, "", "Juanma", "Lopez Torralba", []),
+      new Player(2, "", "Jorge", "Arroyo", []),
     ];
   }
 }

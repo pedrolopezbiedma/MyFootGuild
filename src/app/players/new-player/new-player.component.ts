@@ -33,6 +33,7 @@ export class NewPlayerComponent implements OnInit {
 
   private initializeForm(): void {
     this.newPlayerForm = new FormGroup({
+      avatarUrl: new FormControl("", [Validators.required]),
       firstName: new FormControl("", [Validators.required]),
       lastName: new FormControl("", [Validators.required]),
     });

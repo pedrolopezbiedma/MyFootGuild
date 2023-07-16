@@ -4,6 +4,7 @@
 <ul>
     <pre>Usar aqui la tabla con filtros y busquedas que hay en angular material</pre>
     <li *ngFor="let player of players$ | async">
+        {{ player.avatarUrl }}
         {{ player.firstName }}
         {{ player.lastName }}
         {{ player.numMatches }}

@@ -1,6 +1,7 @@
 export class Player {
   constructor(
     public playerId: number,
+    public avatarUrl: string,
     public firstName: string,
     public lastName: string,
     public matches: any[] // To be updated to matches
