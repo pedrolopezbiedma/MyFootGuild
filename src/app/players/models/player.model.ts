@@ -3,13 +3,26 @@ export class Player {
     public playerId: number,
     public firstName: string,
     public lastName: string,
-    public numMatches: number,
-    public points: number,
-    public goals: number,
-    public assists: number
+    public matches: any[] // To be updated to matches
   ) {}
 
+  get numMatches(): number {
+    return this.matches.length;
+  }
+
+  get points(): number {
+    return 10; // Calculate points
+  }
+
+  get goals(): number {
+    return 5; // Calculate goals
+  }
+
+  get assists(): number {
+    return 4; // Calculate assists
+  }
+
   get victoryRate(): number {
-    return 100; // To be done, how to calculate this.
+    return 50; // Calcualte victory rate
   }
 }

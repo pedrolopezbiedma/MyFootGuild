@@ -1,7 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { PlayersService } from "./services/players.service";
 import { BehaviorSubject, tap } from "rxjs";
-import { Player } from "./models/player.model";
 import { ActivatedRoute, Router } from "@angular/router";
 
 @Component({

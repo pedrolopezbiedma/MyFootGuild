@@ -27,10 +27,7 @@ export class NewPlayerComponent implements OnInit {
   }
 
   onSubmit(): void {
-    console.log("Submit detected", this.newPlayerForm.value);
-    this.playersService.addPlayer(
-      new Player(2, "Pedro Javier", "Tocayo", 10, 30, 99, 99)
-    );
+    this.playersService.addPlayer(this.newPlayerForm.value);
     this.navigateBack();
   }
 
