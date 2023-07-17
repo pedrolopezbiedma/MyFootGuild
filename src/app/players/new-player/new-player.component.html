@@ -35,4 +35,5 @@
         <button type="button" (click)="onCancel()">Cancel</button>
         <button [disabled]="!newPlayerForm.valid" type="submit">Create Player</button>
       </div>
+      <p *ngIf="newPlayerError">{{ newPlayerError }}</p>
 </form>

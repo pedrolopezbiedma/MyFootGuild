@@ -13,6 +13,7 @@ import { PlayersService } from "../services/players.service";
 })
 export class NewPlayerComponent implements OnInit {
   newPlayerForm: FormGroup;
+  newPlayerError: string;
 
   constructor(
     private router: Router,
@@ -29,8 +30,12 @@ export class NewPlayerComponent implements OnInit {
   }
 
   onSubmit(): void {
-    this.playersService.addPlayer(this.newPlayerForm.value);
-    this.navigateBack();
+    this.newPlayerError = this.playersService.addPlayer(
+      this.newPlayerForm.value
+    );
+    if (!this.newPlayerError) {
+      this.navigateBack();
+    }
   }
 
   private initializeForm(): void {
