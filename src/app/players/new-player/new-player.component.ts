@@ -1,8 +1,10 @@
+// Angular Core Imports
 import { Component, OnInit } from "@angular/core";
 import { FormControl, FormGroup, Validators } from "@angular/forms";
-import { PlayersService } from "../services/players.service";
-import { Player } from "../models/player.model";
 import { ActivatedRoute, Router } from "@angular/router";
+
+// Own Imports
+import { PlayersService } from "../services/players.service";
 
 @Component({
   selector: "app-new-player",
