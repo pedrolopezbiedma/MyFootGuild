@@ -1,27 +1,33 @@
-# Myfootguild
+# MyFootGuild
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.7.
+MyFootGuild is a pretty small application to store information about a football guild and its players performances with some basic statistics.
 
-## Development server
+## Run Locally
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Clone the project
 
-## Code scaffolding
+```bash
+  git clone https://github.com/pedrolopezbiedma/MyFootGuild.git
+```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Go to the any of the repository projects
 
-## Build
+```bash
+  cd MyFootGuild
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Install dependencies
 
-## Running unit tests
+```bash
+  npm install
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Start the server
 
-## Running end-to-end tests
+```bash
+  npm run start
+```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Authors
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- [@pedrolopezbiedma](https://github.com/pedrolopezbiedma)
