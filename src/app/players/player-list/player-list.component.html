@@ -1,12 +1,11 @@
+<h3>Players List</h3>
 <p> Loading --> {{ loadingPlayers$ | async }}</p>
 
 <h3>Players</h3>
 <ul>
-    <pre>Usar aqui la tabla con filtros y busquedas que hay en angular material</pre>
-    <li *ngFor="let player of players$ | async">
-        ||| Id: {{ player.playerId }}
-        ||| Avatar: {{ player.avatarUrl }}
-        ||| Name:  {{ player.name }}
-        ||| Alias: {{ player.alias }}
-    </li>
+	<pre>Usar aqui la tabla con filtros y busquedas que hay en angular material</pre>
+	<li *ngFor="let player of players$ | async">
+		||| Id: {{ player.playerId }} ||| Avatar: {{ player.avatarUrl }} ||| Name: {{ player.name }} |||
+		Alias: {{ player.alias }}
+	</li>
 </ul>
