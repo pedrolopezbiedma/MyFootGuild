@@ -21,7 +21,7 @@ export class PlayersService {
 		this.players$.next(this.playersStore);
 	}
 
-	addPlayer(newPlayer: { avatarUrl: string; name: string; alias: string }): string {
+	addPlayer(newPlayer: { avatarUrl: string; name: string; alias: string }): Error {
 		// Crear una interfaz de error
 		let error = '';
 		if (this.playerDoExist(newPlayer.name)) {
@@ -34,7 +34,7 @@ export class PlayersService {
 			this.getPlayers();
 		}
 
-		return error;
+		return new Error(error);
 	}
 
 	private playerDoExist(name: string): boolean {
