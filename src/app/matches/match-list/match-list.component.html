@@ -1,0 +1,7 @@
+<h3>Match List</h3>
+<p>Loading is --> {{ matchesLoading$ | async }}</p>
+
+<p>Matches are</p>
+<ul>
+	<li *ngFor="let match of matches$ | async">||| {{ match.matchId }} ||| {{ match.date }}</li>
+</ul>

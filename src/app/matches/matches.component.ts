@@ -1,10 +1,9 @@
-import { Component } from '@angular/core';
+// Angular Core imports
+import { Component } from "@angular/core";
 
 @Component({
-  selector: 'app-matches',
-  templateUrl: './matches.component.html',
-  styleUrls: ['./matches.component.css']
+  selector: "app-matches",
+  templateUrl: "./matches.component.html",
+  styleUrls: ["./matches.component.css"],
 })
-export class MatchesComponent {
-
-}
+export class MatchesComponent {}
