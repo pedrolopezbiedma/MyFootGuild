@@ -17,7 +17,7 @@ export class MatchesService {
 		if (this.matchesStore.length === 0) {
 			this.loadMatches();
 		}
-		this.updateLoadingStatus(true);
+		this.updateLoadingStatus(false);
 		this.matches$.next(this.matchesStore);
 	}
 

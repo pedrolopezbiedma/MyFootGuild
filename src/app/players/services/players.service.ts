@@ -21,8 +21,7 @@ export class PlayersService {
 		this.players$.next(this.playersStore);
 	}
 
-	addPlayer(newPlayer: { avatarUrl: string; name: string; alias: string }): Error {
-		// Crear una interfaz de error
+	createPlayer(newPlayer: { avatarUrl: string; name: string; alias: string }): Error {
 		let error = '';
 		if (this.playerDoExist(newPlayer.name)) {
 			error = 'This player already exists';

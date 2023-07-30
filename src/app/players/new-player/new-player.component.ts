@@ -31,7 +31,7 @@ export class NewPlayerComponent implements OnInit {
 	}
 
 	onSubmit(): void {
-		this.newPlayerError = this.playersService.addPlayer(this.newPlayerForm.value);
+		this.newPlayerError = this.playersService.createPlayer(this.newPlayerForm.value);
 		if (!this.newPlayerError) {
 			this.navigateBack();
 		}
