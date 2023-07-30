@@ -8,12 +8,16 @@ import { Player } from "../models/player.model";
 @Injectable({ providedIn: "root" })
 export class PlayersService {
   private playersStore: Player[] = [];
+
   players$: BehaviorSubject<Player[]> = new BehaviorSubject(this.playersStore);
+  loadingPlayers$: BehaviorSubject<boolean> = new BehaviorSubject(false);
 
   getPlayers(): void {
+    this.updateLoadingStatus(true);
     if (this.playersStore.length === 0) {
       this.loadPlayers();
     }
+    this.updateLoadingStatus(false);
     this.players$.next(this.playersStore);
   }
 
@@ -36,7 +40,7 @@ export class PlayersService {
           []
         ),
       ];
-      this.players$.next(this.playersStore);
+      this.getPlayers();
     }
 
     return error;
@@ -51,6 +55,10 @@ export class PlayersService {
         );
       }) !== -1
     );
+  }
+
+  private updateLoadingStatus(isLoading: boolean): void {
+    this.loadingPlayers$.next(isLoading);
   }
 
   private loadPlayers(): void {

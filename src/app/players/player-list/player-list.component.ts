@@ -1,6 +1,6 @@
 // Angular Core Imports
 import { Component, OnInit } from "@angular/core";
-import { BehaviorSubject, tap } from "rxjs";
+import { tap } from "rxjs";
 
 // Own Imports
 import { PlayersService } from "../services/players.service";
@@ -12,10 +12,9 @@ import { Player } from "../models/player.model";
   styleUrls: ["./player-list.component.css"],
 })
 export class PlayerListComponent implements OnInit {
-  // mover al servicio de players
-  // private isLoadingSubject = new BehaviorSubject<boolean>(true);
-  // public isLoading$ = this.isLoadingSubject.asObservable();
-
+  public loadingPlayers$ = this.playersService.loadingPlayers$.pipe(
+    tap((value) => console.log("Loading is -->", value))
+  );
   public players$ = this.playersService.players$.pipe(
     tap((players: Player[]) => {
       console.log("Players are -->", players);
