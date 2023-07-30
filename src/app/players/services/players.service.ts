@@ -19,11 +19,11 @@ export class PlayersService {
 
   addPlayer(newPlayer: {
     avatarUrl: string;
-    firstName: string;
-    lastName: string;
+    name: string;
+    alias: string;
   }): string {
     let error = "";
-    if (this.playerDoExist(newPlayer.firstName, newPlayer.lastName)) {
+    if (this.playerDoExist(newPlayer.name)) {
       error = "This player already exists";
     } else {
       this.playersStore = [
@@ -31,8 +31,8 @@ export class PlayersService {
         new Player(
           this.playersStore.length,
           newPlayer.avatarUrl,
-          newPlayer.firstName,
-          newPlayer.lastName,
+          newPlayer.name,
+          newPlayer.alias,
           []
         ),
       ];
@@ -42,12 +42,12 @@ export class PlayersService {
     return error;
   }
 
-  private playerDoExist(firstName: string, lastName: string): boolean {
+  private playerDoExist(name: string): boolean {
     return (
       this.playersStore.findIndex((player: Player) => {
         return (
-          player.firstName.toLowerCase() === firstName.toLowerCase() &&
-          player.lastName.toLowerCase() === lastName.toLowerCase()
+          player.name.toLowerCase() === name.toLowerCase() &&
+          player.name.toLowerCase() === name.toLowerCase()
         );
       }) !== -1
     );
@@ -55,9 +55,15 @@ export class PlayersService {
 
   private loadPlayers(): void {
     this.playersStore = [
-      new Player(0, "", "Pedro", "Lopez Biedma", []),
-      new Player(1, "", "Juanma", "Lopez Torralba", []),
-      new Player(2, "", "Jorge", "Arroyo", []),
+      new Player(0, "url1", "Pedro Lopez Biedma", "Pedro Lopez Biedma", []),
+      new Player(
+        1,
+        "url2",
+        "Juanma Lopez Torralba",
+        "Juanma Lopez Torralba",
+        []
+      ),
+      new Player(2, "url3", "Jorge Arroyo", "Jorge Arroyo", []),
     ];
   }
 }

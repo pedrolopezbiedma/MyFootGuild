@@ -12,15 +12,13 @@ import { Player } from "../models/player.model";
   styleUrls: ["./player-list.component.css"],
 })
 export class PlayerListComponent implements OnInit {
-  private isLoadingSubject = new BehaviorSubject<boolean>(true);
-  public isLoading$ = this.isLoadingSubject.asObservable();
+  // mover al servicio de players
+  // private isLoadingSubject = new BehaviorSubject<boolean>(true);
+  // public isLoading$ = this.isLoadingSubject.asObservable();
 
-  public players$ = this.playersService.players$.asObservable().pipe(
+  public players$ = this.playersService.players$.pipe(
     tap((players: Player[]) => {
       console.log("Players are -->", players);
-      if (players.length > 0) {
-        this.isLoadingSubject.next(false);
-      }
     })
   );
 

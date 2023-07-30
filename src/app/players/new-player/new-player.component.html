@@ -12,24 +12,24 @@
         <p *ngIf="newPlayerForm.get('avatarUrl')?.touched && !newPlayerForm.get('avatarUrl')?.valid">Please check this field</p>
     </div>
     <div class="form-group">
-        <label for="firstName">First Name</label>
+        <label for="name">Name</label>
         <input
           class="form-control"
           type="text"
-          id="firstName"
-          placeholder="Place here your firstname"
-          formControlName="firstName">
-          <p *ngIf="newPlayerForm.get('firstName')?.touched && !newPlayerForm.get('firstName')?.valid">Please check this field</p>
+          id="name"
+          placeholder="Place here your name"
+          formControlName="name">
+          <p *ngIf="newPlayerForm.get('name')?.touched && !newPlayerForm.get('name')?.valid">Please check this field</p>
       </div>
       <div class="form-group">
-        <label for="lastName">Last Name</label>
+        <label for="alias">Alias</label>
         <input
           class="form-control"
           type="text"
-          id="lastName"
-          placeholder="Place here your lastname"
-          formControlName="lastName">
-          <p *ngIf="newPlayerForm.get('lastName')?.touched && !newPlayerForm.get('lastName')?.valid">Please check this field</p>
+          id="alias"
+          placeholder="Place here your alias"
+          formControlName="alias">
+          <p *ngIf="newPlayerForm.get('alias')?.touched && !newPlayerForm.get('alias')?.valid">Please check this field</p>
       </div>
       <div class="row">
         <button type="button" (click)="onCancel()">Cancel</button>

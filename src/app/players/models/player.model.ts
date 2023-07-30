@@ -2,28 +2,36 @@ export class Player {
   constructor(
     public playerId: number,
     public avatarUrl: string,
-    public firstName: string,
-    public lastName: string,
-    public matches: any[] // To be updated to matches
+    public name: string,
+    public alias: string,
+    public playedMatchesIds: string[]
   ) {}
+}
 
-  get numMatches(): number {
-    return this.matches.length;
-  }
+export class TablePlayer extends Player {
+  public numMatches: number;
+  public points: number;
+  public goals: number;
+  public assists: number;
+  public victoryRate: number;
 
-  get points(): number {
-    return 10; // Calculate points
-  }
-
-  get goals(): number {
-    return 5; // Calculate goals
-  }
-
-  get assists(): number {
-    return 4; // Calculate assists
-  }
-
-  get victoryRate(): number {
-    return 50; // Calcualte victory rate
+  constructor(
+    playerId: number,
+    avatarUrl: string,
+    name: string,
+    alias: string,
+    playedMatchesIds: string[],
+    numMatches: number,
+    points: number,
+    goals: number,
+    assists: number,
+    victoryRate: number
+  ) {
+    super(playerId, avatarUrl, name, alias, playedMatchesIds);
+    this.numMatches = numMatches;
+    this.points = points;
+    this.goals = goals;
+    this.assists = assists;
+    this.victoryRate = victoryRate;
   }
 }
