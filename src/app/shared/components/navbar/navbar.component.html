@@ -1,12 +1,12 @@
 <mat-toolbar color="primary" class="navbar">
-  <div class="title" [routerLink]="['/players']">
+  <div class="title" [routerLink]="['/matches']">
     <span>My FootGuild</span>
     <mat-icon class="ball-icon" fontIcon="sports_soccer"></mat-icon>
   </div>
   
   <div class="navigation">
-    <a mat-stroked-button routerLinkActive="active-link" [routerLink]="['/players']">Players</a>
     <a mat-stroked-button routerLink routerLinkActive="active-link" [routerLink]="['/matches']">Matches</a>
+    <a mat-stroked-button routerLinkActive="active-link" [routerLink]="['/players']">Players</a>
   </div>
 
   <span class="spacer"></span>
